@@ -354,7 +354,7 @@ void rfspy_command(const uint8_t *buf, int count, int rssi) {
 
 static void gnarl_loop(void *unused) {
 	ESP_LOGD(TAG, "starting gnarl_loop");
-	esp_task_wdt_add(0);
+	esp_task_wdt_add(NULL);
 	const int timeout_ms = 60*MILLISECONDS;
 	for (;;) {
 		rfspy_request_t req;
